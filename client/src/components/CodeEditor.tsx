@@ -1,6 +1,7 @@
 import { tags as t } from '@lezer/highlight';
 import CodeMirror from '@uiw/react-codemirror';
 import React from 'react'
+import { loadLanguage, langNames, langs } from '@uiw/codemirror-extensions-langs';
 import { javascript } from '@codemirror/lang-javascript';
 import { draculaInit } from '@uiw/codemirror-theme-dracula';
 export default function CodeEditor() {
@@ -10,7 +11,8 @@ export default function CodeEditor() {
     setValue(val);
   }, []);
   return (
-    <CodeMirror value={value} height="90vh" width='70vh' extensions={[javascript({ jsx: true })]} onChange={onChange}
+    <CodeMirror value={value} height="100vh" width='80vh'  extensions={[loadLanguage('tsx')!]} onChange={onChange}
+    
     theme={draculaInit({
         settings: {
           caret: '#c6c6c6',

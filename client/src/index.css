@@ -71,6 +71,6 @@
       @apply border-spacing-0;
     }
     body {
-      @apply bg-white text-wrap;
+      @apply bg-white text-wrap ;
     }
   }
