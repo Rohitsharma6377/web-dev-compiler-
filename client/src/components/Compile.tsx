@@ -4,24 +4,25 @@ import CodeEditor from './CodeEditor';
 import { tags as t } from '@lezer/highlight';
 import { dracula, draculaInit } from '@uiw/codemirror-theme-dracula';
 import HelpHeader from './HelpHeader';
+import { useSelector } from 'react-redux';
 const Compile = () => {
-  console.error(combinedMessage);
+  const html = useSelector((state: Rootstate)=>state.comSlice.html);
   return (<>
   <ResizablePanelGroup
       direction="horizontal"
       className=" bg-gray-700"
     >
-      <ResizablePanel defaultSize={50}>
+      <ResizablePanel defaultSize={70}>
         <HelpHeader/>
-        <div className="flex h-[585px] w-[456px] min-w-[300px] items-center justify-center p-6  ">
+        <div className="flex h-[390px] w-[496px] min-h-[400px] mb-10 min-w-[300px] items-center justify-center   ">
           <CodeEditor/>
         </div>
       </ResizablePanel>
       <ResizableHandle />
-      <ResizablePanel defaultSize={85}>
+      <ResizablePanel defaultSize={80}>
         <ResizablePanelGroup direction="vertical">
-          <ResizablePanel defaultSize={100}>
-            <div className="flex h-full items-center min-w-[300px] justify-center  p-6 border">
+          <ResizablePanel defaultSize={50}>
+            <div className="flex h-full items-center min-h-[200px] min-w-[300px] justify-center  p-6 border">
               <span className="font-semibold">Two</span>
             </div>
           </ResizablePanel>
