@@ -19,7 +19,15 @@ const comSlice = createSlice({
 updateCurrentLanguage:(state , action:PayloadAction<comSliceStateType["currentLanguage"]>)=>{
     state.currentLanguage = action.payload;
 },
-
+updateHtml:(state , action: PayloadAction<string>)=>{
+state.html = action.payload;
+},
+updateJavascript:(state , action: PayloadAction<string>)=>{
+    state.javascript = action.payload;
+    },
+    updatePython:(state , action: PayloadAction<string>)=>{
+        state.python = action.payload;
+        },
 
     },
 });
