@@ -4,9 +4,8 @@ import CodeEditor from './CodeEditor';
 import { tags as t } from '@lezer/highlight';
 import { dracula, draculaInit } from '@uiw/codemirror-theme-dracula';
 import HelpHeader from './HelpHeader';
-import { useSelector } from 'react-redux';
 const Compile = () => {
-  const html = useSelector((state: Rootstate)=>state.comSlice.html);
+  
   return (<>
   <ResizablePanelGroup
       direction="horizontal"
