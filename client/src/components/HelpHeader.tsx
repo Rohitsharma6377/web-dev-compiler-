@@ -9,13 +9,13 @@ import {
     SelectValue,
   } from "@/components/ui/select"
 import { useDispatch, useSelector } from 'react-redux'
-import { RootState } from '@/reduxtoolkit/store'
 import { updateCurrentLanguage } from '@/reduxtoolkit/slice/comSlice'
+import { RootState } from '@/reduxtoolkit/store'
   
 
 export default function HelpHeader() {
   const dispatch  = useDispatch();
-  const deafultLanguage = useSelector((state:RootState)=>state.comSlice.currentLanguage);
+  const currentLanguage = useSelector((state:RootState)=>state.comSlice.currentLanguage);
   return (
     <div className=' __helper_header h-[50px] bg-black text-white p-2 flex justify-between  items-center'>
         <div className="__btn_container flex gap-3">
@@ -24,13 +24,13 @@ export default function HelpHeader() {
         </div>
       <div className='__tab_switcher flex justify-center items-center  gap-1'>
       <small> Current Language:</small>
-      <Select  defaultValue={deafultLanguage} onValueChange={(value) => dispatch(updateCurrentLanguage(value ))}>
+      <Select  defaultValue={currentLanguage} onValueChange={(value) => dispatch(updateCurrentLanguage( value as comSliceStateType["currentLanguage"]))}>
   <SelectTrigger className="w-[120px] bg-gray-800 text-white  outline-none focus:ring-0">
-    <SelectValue defaultValue='html'/>
+    <SelectValue/>
   </SelectTrigger>
   <SelectContent className=' bg-black text-white'>
     <SelectItem value="html">HTML</SelectItem>
-    <SelectItem value="Python">PYTHON</SelectItem>
+    <SelectItem value="css">CSS</SelectItem>
     <SelectItem value="javascript">JAVASCRIPT</SelectItem>
   </SelectContent>
 </Select>
