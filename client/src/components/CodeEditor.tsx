@@ -7,12 +7,12 @@ import { loadLanguage} from '@uiw/codemirror-extensions-langs';
 import { draculaInit } from '@uiw/codemirror-theme-dracula';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/reduxtoolkit/store';
-import {  updateCurrentLanguage, updateCurrentCode, updateCodevalue  } from '@/reduxtoolkit/slice/comSlice';
+import {  updateCodevalue  } from '@/reduxtoolkit/slice/comSlice';
 export default function CodeEditor() {
   const currentLanguage = useSelector((state:RootState)=>state.comSlice.currentLanguage);
 const fullCode = useSelector((state:RootState)=>state.comSlice.fullCode);
   const dispatch = useDispatch();
-    const [value, setValue] = React.useState("console.log('hello world!');");
+    const [] = React.useState("console.log('hello world!');");
   const onChange = React.useCallback((value: string) => {
     // console.log('val:', typeof val);
     // setValue(val);

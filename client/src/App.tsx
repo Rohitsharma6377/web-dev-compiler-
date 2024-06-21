@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Homee from "./components/home/Homee";
 import Compile from "./components/Compile";
 import Notfound from "./components/Notfound";

@@ -1,8 +1,5 @@
-import React from 'react'
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from './ui/resizable';
 import CodeEditor from './CodeEditor';
-import { tags as t } from '@lezer/highlight';
-import { dracula, draculaInit } from '@uiw/codemirror-theme-dracula';
 import HelpHeader from './HelpHeader';
 import Rendercode from './Rendercode';
 const Compile = () => {
